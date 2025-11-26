@@ -25,15 +25,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: 'npm'
+          # Cache line removed to fix error
 
       - name: Install dependencies
-        run: npm ci || npm install
+        # Using npm install instead of npm ci since there is no lockfile
+        run: npm install
 
       - name: Build
         run: npm run build
         env:
-          # This pulls the secret you added in GitHub Settings
           API_KEY: ${{ secrets.API_KEY }}
 
       - name: Upload artifact
