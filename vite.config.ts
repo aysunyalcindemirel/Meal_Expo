@@ -8,6 +8,8 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, (process as any).cwd(), '');
   
   return {
+    // CRITICAL: This makes the app work on GitHub Pages subdirectories
+    base: './', 
     plugins: [react()],
     // This section ensures your API Key is passed from GitHub Secrets into the React app
     define: {
