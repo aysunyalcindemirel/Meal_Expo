@@ -1,16 +1,9 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Meal } from "../types";
 
-// Helper to prevent TypeScript errors with process.env
-declare const process: {
-  env: {
-    API_KEY: string;
-    [key: string]: string | undefined;
-  }
-};
-
 // Initialize the client
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// We use 'as string' to tell TypeScript we are sure the key exists
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
 
 // Schema for structured JSON output
 const mealSchema = {
