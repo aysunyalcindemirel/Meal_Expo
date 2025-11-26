@@ -20,7 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     
-    /* FIX: Explicitly include Node types so 'process' is recognized */
+    /* FIX: This line prevents the build crash by enabling 'process' */
     "types": ["node"]
   },
   "include": ["./**/*.ts", "./**/*.tsx"]
