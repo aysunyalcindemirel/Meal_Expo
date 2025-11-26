@@ -18,7 +18,10 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    
+    /* FIX: Explicitly include Node types so 'process' is recognized */
+    "types": ["node"]
   },
   "include": ["./**/*.ts", "./**/*.tsx"]
 }
