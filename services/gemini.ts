@@ -1,8 +1,11 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Meal } from "../types";
 
+// NOTE: We have removed the manual 'declare const process' block here because 
+// it is now handled by @types/node in package.json. Keeping it would cause a crash.
+
 // Initialize the client
-// We use 'as string' to tell TypeScript we are sure the key exists
+// We use 'as string' to satisfy TypeScript that the key is not undefined
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
 
 // Schema for structured JSON output
